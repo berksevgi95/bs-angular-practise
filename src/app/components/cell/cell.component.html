@@ -1,0 +1,24 @@
+<td class="cell-container">
+  <div
+    class="cell-content"
+    [attr.head]="headIndex"
+    [attr.footer]="footerIndex"
+  >
+    <button
+      class="cell-button"
+      [class.is-flipped]="state"
+      (click)="toggle()"
+    >
+      <div class="cell-button-face cell-button-face--front flex">
+        <span class="m-auto">
+          {{state}}
+        </span>
+      </div>
+      <div class="cell-button-face cell-button-face--back flex">
+        <span class="m-auto">
+          {{state}}
+        </span>
+      </div>
+    </button>
+  </div>
+</td>

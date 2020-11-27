@@ -1,0 +1,75 @@
+<form
+  [formGroup]="form"
+  novalidate
+  (ngSubmit)="onSubmit(form.value)"
+>
+  <div class="mb-4">
+    <label
+      class="center-block"
+      [class.text-red-600]="checkValidation('x')"
+      for="x"
+    >
+      X:
+    </label>
+    <br>
+    <input
+      id="x"
+      class="shadow-lg p-2 w-full"
+      formControlName="x"
+      type="number"
+    >
+  </div>
+  <div class="mb-4">
+    <label
+      class="center-block"
+      [class.text-red-600]="checkValidation('y')"
+      for="y"
+    >
+      Y:
+    </label>
+    <br>
+    <input
+      id="y"
+      class="shadow-lg p-2 w-full"
+      formControlName="y"
+      type="number"
+    >
+  </div>
+  <div class="mb-4">
+    <label class="center-block">
+      Set to:
+    </label>
+    <br>
+    <input
+      id="setToOn"
+      formControlName="setTo"
+      type="radio"
+      [value]="true"
+    >
+    <label
+      class="center-block"
+      for="setToOn"
+    >
+      ON
+    </label>
+    <input
+      id="setToOff"
+      formControlName="setTo"
+      type="radio"
+      [value]="false"
+    >
+    <label
+      class="center-block"
+      for="setToOff"
+    >
+      OFF
+    </label>
+  </div>
+  <button
+    class="submit-button shadow-lg p-2"
+    type="submit"
+    [disabled]="checkDisability()"
+  >
+    Confirm
+  </button>
+</form>

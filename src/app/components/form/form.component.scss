@@ -1,0 +1,9 @@
+.submit-button {
+  background: #0570FE;
+  width: 100%;
+  color: white;
+}
+
+.submit-button:disabled {
+  opacity: .5;
+}
