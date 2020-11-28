@@ -1,15 +1,22 @@
-# DemoMgtAngular
+# BSAngularPractise
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.5.
+[![Netlify Status](https://api.netlify.com/api/v1/badges/2fa30715-8f5b-4db4-b54d-5fc37b8e8c04/deploy-status)](https://app.netlify.com/sites/affectionate-albattani-afae69/deploys)
 
-## Getting Started
-The is the sample code explained in Day 14 - How to use Microsoft Graph Toolkit with Angular
+Yet another Angular asset written by BS.
 
-1. Run `npm install` (to download all dependant npm packages)
-2. Create an Azure App Registration with the following Graph API permissions
-    * openid
-    * profile
-    * user.read
-    * calendars.read
-2. Modify src/app/app.component.ts and replace [YOUR-CLIENT-ID] with an Azure App Registration client id
-3. Run `ng serve` for a local dev server and navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Demo is available at [this](https://affectionate-albattani-afae69.netlify.app/) link!
+
+## Introduction
+Before starting, project dependencies should be installed via:
+```
+npm install
+```
+To run the application, run:
+```
+npm start
+```
+To build, run:
+```
+npm run build
+```
+Application will be deployed under `/dist` folder.
