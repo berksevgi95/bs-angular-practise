@@ -12,6 +12,8 @@ import {
 })
 export class CellComponent {
 
+  @Input() id: string;
+
   @Input() headIndex: number;
 
   @Input() footerIndex: number;

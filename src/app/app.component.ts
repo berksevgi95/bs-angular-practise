@@ -1,7 +1,9 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { Cell } from './models/cell/cell.model';
+import { Form } from './models/form/form';
 
-const ROW = 4, COLUMN = 4;
+export const ROW = 4
+export const COLUMN = 4;
 
 @Component({
   selector: 'app-root',
@@ -26,5 +28,10 @@ export class AppComponent {
         }
       }
     }
+  }
+
+  onFormSubmit(value: Form) {
+    if (this.cellArr[ROW - value.y][value.x - 1].state.valueOf() !== value.setTo.valueOf())
+      document.getElementById(`${value.y} ${value.x}`).click()
   }
 }

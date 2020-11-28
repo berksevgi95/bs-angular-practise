@@ -1,12 +1,11 @@
 <form
   [formGroup]="form"
   novalidate
-  (ngSubmit)="onSubmit(form.value)"
+  (ngSubmit)="onComplete(form.value)"
 >
-  <div class="mb-4">
+  <div class="mb-4 relative">
     <label
       class="center-block"
-      [class.text-red-600]="checkValidation('x')"
       for="x"
     >
       X:
@@ -14,15 +13,21 @@
     <br>
     <input
       id="x"
-      class="shadow-lg p-2 w-full"
+      class="shadow-lg p-2 w-full input"
       formControlName="x"
       type="number"
+      [attr.error]="checkValidation('x')"
     >
+    <div
+      *ngIf="checkValidation('x')"
+      class="error"
+    >
+      Invalid X value
+    </div>
   </div>
-  <div class="mb-4">
+  <div class="mb-4 relative">
     <label
       class="center-block"
-      [class.text-red-600]="checkValidation('y')"
       for="y"
     >
       Y:
@@ -30,10 +35,17 @@
     <br>
     <input
       id="y"
-      class="shadow-lg p-2 w-full"
+      class="shadow-lg p-2 w-full input"
       formControlName="y"
       type="number"
+      [attr.error]="checkValidation('y')"
     >
+    <div
+      *ngIf="checkValidation('y')"
+      class="error"
+    >
+      Invalid Y value
+    </div>
   </div>
   <div class="mb-4">
     <label class="center-block">
@@ -49,6 +61,7 @@
     <label
       class="center-block"
       for="setToOn"
+      [class.text-red-600]="checkValidation('setTo')"
     >
       ON
     </label>
@@ -61,6 +74,7 @@
     <label
       class="center-block"
       for="setToOff"
+      [class.text-red-600]="checkValidation('setTo')"
     >
       OFF
     </label>

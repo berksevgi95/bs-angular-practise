@@ -6,6 +6,7 @@
       >
         <app-cell
           *ngFor="let cell of cellChunk; let j = index"
+          [id]="(cellArr.length - i) + ' ' + (j + 1)"
           [headIndex]="j === 0 ? (cellArr.length - i) : null"
           [footerIndex]="(cellArr.length - i) === 1 ? j + 1 : null"
           [(state)]="cell.state"
@@ -14,7 +15,9 @@
       </tr>
     </table>
     <div class="border-solid border-gray-400 border-t border-l-0 lg:border-l lg:border-t-0 w-full lg:w-1 my-16 lg:my-0 mx-0 lg:mx-16"></div>
-    <app-form></app-form>
+    <app-form
+      (onSubmit)="onFormSubmit($event)"
+    ></app-form>
   </div>
   <div class="w-full mt-16 flex">
     <button

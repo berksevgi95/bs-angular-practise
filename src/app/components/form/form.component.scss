@@ -1,3 +1,20 @@
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.input {
+  outline-color: #0570FE;
+}
+
+.input[error="true"] {
+  outline-color: red;
+}
+
 .submit-button {
   background: #0570FE;
   width: 100%;
@@ -6,4 +23,13 @@
 
 .submit-button:disabled {
   opacity: .5;
+}
+
+.error {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  color: red;
+  animation: fadein .5s;
+  animation-fill-mode: both;
 }
